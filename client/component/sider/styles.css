@@ -1,0 +1,14 @@
+#sider{
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    overflow: hidden;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: 1px solid #e8e8e8;
+    position: absolute;
+    left: 0;
+    background: #404040;
+    top:0
+}

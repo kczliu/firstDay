@@ -1,0 +1,19 @@
+#header{
+    height: 60px;
+    background: #fff;
+    margin: auto 15px;
+    border-radius: 0 0 5px 5px;
+    line-height: 60px;
+    overflow: auto;
+    -webkit-transition: 0.3s;
+    -moz-transition:  0.3s;
+    -o-transition:  0.3s;
+    transition:  0.3s;
+}
+.lb{
+    float: left;
+}
+.rb{
+    float: right;
+    margin-right: 15px;
+}

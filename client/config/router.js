@@ -34,5 +34,6 @@ const InjectPrivateRoute = withRouter(inject((store)=>{
 export default () => [
     <Route path="/" exact render={() => <Redirect to="/login" />} key="/" />,
     <Route path="/login" exact key="login" component={Login} />,
-    <InjectPrivateRoute path="/home" Component={Home} key="home"></InjectPrivateRoute>
+    <Route path="/home" exact key="home" component={Home} />,
+    //<InjectPrivateRoute path="/home" Component={Home} key="home"></InjectPrivateRoute>
 ]

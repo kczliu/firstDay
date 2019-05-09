@@ -9,4 +9,8 @@ export default class UserState {
         this.user.isLogin = true
         this.user.userInfo = info
     }
+    @action exit(){
+        this.user.isLogin = false
+        this.user.userInfo = {}
+    }
 }
