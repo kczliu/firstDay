@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
+import Header from '../../component/header/index'
 
 class Home extends Component{
     render(){
-        return (
+        return [
             <div>this is home</div>
-        )
+        ]
     }
 }
 

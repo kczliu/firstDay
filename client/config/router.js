@@ -4,52 +4,35 @@ import {
     Redirect,
     withRouter,
 } from 'react-router-dom'
-import {
-    inject,
-    observer,
-} from 'mobx-react'
+import {inject, observer} from 'mobx-react'
 import PropTypes from 'prop-types'
 
 import Login from '../views/login/index.js'
 import Home from '../views/home/index.js'
 
-/*const PrivateRoute = ({ isLogin, component: Component, ...rest }) => {
-    // debugger // eslint-disable-line
-    return (
+const PrivateRoute = ({isLogin,Component,...rest})=>{
+    return(
         <Route
             {...rest}
-            render={
-                (props) => (
-                    isLogin ?
-                        <Component {...props} /> :
-                        <Redirect
-                            to={{
-                                pathname: '/user/login',
-                                search: `?from=${rest.path}`, // eslint-disable-line
-                            }}
-                        />
+            render ={
+                props=>(
+                    isLogin?<Component {...rest}></Component>:
+                        <Redirect to={{pathname:'/login'}}></Redirect>
                 )
             }
-        />
+        ></Route>
     )
 }
 
-const InjectedPrivateRoute = withRouter(inject(({ appState }) => {
+const InjectPrivateRoute = withRouter(inject((store)=>{
+    console.log(store.userState.user.isLogin)
     return {
-        isLogin: appState.user.isLogin,
+        isLogin:store.userState.user.isLogin
     }
 })(observer(PrivateRoute)))
-
-PrivateRoute.propTypes = {
-    component: PropTypes.element.isRequired,
-    isLogin: PropTypes.bool,
-}
-
-PrivateRoute.defaultProps = {
-    isLogin: false,
-}*/
 
 export default () => [
     <Route path="/" exact render={() => <Redirect to="/login" />} key="/" />,
     <Route path="/login" exact key="login" component={Login} />,
+    <InjectPrivateRoute path="/home" Component={Home} key="home"></InjectPrivateRoute>
 ]

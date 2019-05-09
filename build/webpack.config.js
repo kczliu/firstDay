@@ -75,9 +75,7 @@ if(isDev){
         overlay:{
             errors:true
         },
-        historyApiFallback:{
-            index:"public/index.html"
-        }
+        historyApiFallback:true
     }
 }
 config.plugins.push(new webpack.HotModuleReplacementPlugin())

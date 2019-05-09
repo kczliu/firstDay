@@ -1,10 +1,15 @@
 import React,{Component} from 'react'
-
-import {Form, Icon, Input, Button, Checkbox} from 'antd'
+import {observer,inject} from 'mobx-react'
+import {Form, Icon, Input, Button, Checkbox,message} from 'antd'
 import 'antd/dist/antd.css'
 import './style.css'
 
-
+@inject((store)=>{
+    return {
+        userState:store.userState
+    }
+})
+@observer
 class Login extends Component{
     handleSubmit = (e) =>{
         e.preventDefault()
@@ -17,7 +22,12 @@ class Login extends Component{
                     message.error("密码错误")
                     return false
                 }
+                this.props.userState.login(values)
+                setTimeout(()=>{
+                    this.props.history.push('/home')
+                },1000)
             }
+
         })
     }
     render(){
