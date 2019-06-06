@@ -9,6 +9,25 @@
     border-right: 1px solid #e8e8e8;
     position: absolute;
     left: 0;
-    background: #404040;
+    background: #001529;
     top:0
 }
+.github {
+    width: 200px;
+    overflow: hidden;
+    color: #fff;
+    cursor: pointer;
+    fill: currentColor;
+    display: block;
+    margin: 15px auto;
+    text-align: left;
+    padding-left: 23px;
+
+}
+.github span {
+     position: relative;
+     top: -10px;
+     margin: 5px 10px;
+     font-size: 14px;
+
+ }
